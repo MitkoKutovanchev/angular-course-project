@@ -1,4 +1,4 @@
-.single-task {
+.single-course {
     border: 1px solid gray;
     padding: 20px;
     text-align: center;
@@ -22,5 +22,9 @@
     position: absolute;
     right: 25px;
     top: 5px;
+    cursor: pointer;
+}
+
+.rateBtn{
     cursor: pointer;
 }

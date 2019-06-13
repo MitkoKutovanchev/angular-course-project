@@ -8,7 +8,15 @@ import AuthService from '../../auth/auth.service';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  isLoggedIn: boolean = false;
+  isAdmin: boolean = false;
+
+  constructor(private authService: AuthService) {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    if (this.isLoggedIn) {
+      this.isAdmin = this.authService.getLoggedUser().role === "admin";
+    }
+  }
 
   ngOnInit() {
   }

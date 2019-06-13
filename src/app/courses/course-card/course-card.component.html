@@ -1,0 +1,36 @@
+<div class="single-course">
+  <span *ngIf="isLoggedIn">
+    <span class="assign-btn" title="Assign" (click)="onAssignClick()">A</span>
+  </span>
+  <span *ngIf="isLoggedIn && isAdmin">
+    <span class="edit-btn" title="Edit" (click)="onEditClick()">E</span>
+  </span>
+  <span *ngIf="isLoggedIn && isAdmin">
+    <span class="delete-btn" title="Delete" (click)="onDeleteClick()">X</span>
+  </span>
+  <div class="row">
+    <div class="col-12">
+      <h3>{{ course.title }}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>{{ course.description }}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span *ngIf="isLoggedIn">
+        <span class="rateBtn" (click)="rateUp()">△</span>
+      </span>
+      <span>Course rating: </span>
+      <span>{{ course.rating }}</span>
+      <span *ngIf="isLoggedIn">
+        <span class="rateBtn" (click)="rateDown()">▽</span>
+      </span>
+    </div>
+  </div>
+  <span class="assigned" *ngIf="isLoggedIn && isAssigned">
+    Course joined: &#9989;
+  </span>
+</div>

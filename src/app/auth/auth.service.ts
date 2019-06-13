@@ -7,12 +7,12 @@ import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
-  })
+})
 export default class AuthService {
 
     constructor(private http: HttpClient,
-                private usersService: UsersService,
-                private router: Router) {
+        private usersService: UsersService,
+        private router: Router) {
 
     }
 
@@ -27,23 +27,25 @@ export default class AuthService {
     public login(username: string, password: string): Observable<UserInterface> {
         return new Observable((observer) => {
             this.usersService.getAllUsers()
-            .subscribe((allUsers) => {
-                const user = allUsers
-                .find(u => u.username === username && u.password === password);
+                .subscribe((allUsers) => {
+                    const user = allUsers
+                        .find(u => u.username === username && u.password === password);
 
-                if (user) {
-                    sessionStorage.setItem('loggedUser', JSON.stringify(user))
-                    observer.next(user);
-                    observer.complete();
-                } else {
-                    observer.error("Incorrect username/password!");
-                }
-            });
-        });        
+                    if (user && !user.isBlocked) {
+                        sessionStorage.setItem('loggedUser', JSON.stringify(user))
+                        observer.next(user);
+                        observer.complete();
+                    } else if (user && user.isBlocked) {
+                        observer.error("Your account is blocked!");
+                    } else {
+                        observer.error("Incorrect username/password!");
+                    }
+                });
+        });
     }
 
     public logout(): void {
         sessionStorage.removeItem('loggedUser');
         this.router.navigateByUrl('auth/login');
     }
- }
+}

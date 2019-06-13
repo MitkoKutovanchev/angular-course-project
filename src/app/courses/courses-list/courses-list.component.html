@@ -1,0 +1,12 @@
+<div class="course-holder">
+    <span *ngIf="isLoggedIn && isAdmin">
+        <div class="row justify-content-end">
+            <button class="btn btn-primary mr-3 mt-2" (click)="onCourseAdd()">Add course</button>
+        </div>
+    </span>
+    <div class="row">
+        <div class="course-card col-6 mt-3 mb-3" *ngFor="let currentCourse of courses; let index = index">
+            <app-course-card [course]="currentCourse" (onDelete)="onCourseDeleted($event)"></app-course-card>
+        </div>
+    </div>
+</div>

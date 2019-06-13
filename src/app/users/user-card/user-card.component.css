@@ -14,6 +14,13 @@
     cursor: pointer;
 }
 
+.block-btn {
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    cursor: pointer;
+}
+
 .edit-btn {
     position: absolute;
     top: 5px;

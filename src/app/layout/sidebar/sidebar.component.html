@@ -1,13 +1,22 @@
 <div class="menu-wrapper">
   <ul class="menu-items">
+    <span *ngIf="isLoggedIn && isAdmin">
+      <li class="menu-item mb-2 ml-2">
+        <a routerLink="/users/list">Users</a>
+      </li>
+    </span>
     <li class="menu-item mb-2 ml-2">
-      <a routerLink="/users/list">Users</a>
+      <a routerLink="/courses/list">Courses</a>
     </li>
-    <li class="menu-item mb-2 ml-2">
-      <a routerLink="/tasks/list">Tasks</a>
-    </li>
-    <li class="menu-item mb-2 ml-2">
-      <a (click)="logout()">Logout</a>
-    </li>
+    <span *ngIf="isLoggedIn">
+      <li class="menu-item mb-2 ml-2">
+        <a (click)="logout()">Logout</a>
+      </li>
+    </span>
+    <span *ngIf="!isLoggedIn">
+      <li class="menu-item mb-2 ml-2">
+        <a routerLink="/auth/login">Login</a>
+      </li>
+    </span>
   </ul>
 </div>

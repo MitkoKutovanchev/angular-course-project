@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import UserInterface from '../models/user.model';
 import { Router } from '@angular/router';
+import UsersService from "../users.service";
 import AuthService from '../../auth/auth.service';
 
 @Component({
@@ -15,17 +16,22 @@ export class UserCardComponent implements OnInit {
 
   @Input() isAdmin: boolean = false;
   @Input() currentUserId: number;
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private usersService: UsersService) { }
 
   ngOnInit() {
   }
 
-  getUserImage() {
-    return this.user.picture + '?random=' + this.user.id;
-  }
-
   onDeleteClicked() {
     this.onDelete.emit(this.user.id);
+  }
+
+  onBlockClicked() {
+    this.user.isBlocked ? this.user.isBlocked = false : this.user.isBlocked = true;
+    this.usersService.addNewUser(this.user)
+      .subscribe(() => {
+        console.log('USER UPDATED');
+      })
   }
 
   onUserEdit() {

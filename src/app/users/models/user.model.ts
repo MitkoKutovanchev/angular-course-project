@@ -1,8 +1,11 @@
+import CourseInterface from 'src/app/courses/models/course.model';
+
 export default interface UserInterface {
     id: number;
-    name: string;
     username: string;
     password: string;
-    picture: string;
-    isAdmin?: boolean;
+    email: string;
+    role: string;
+    isBlocked: boolean;
+    joinedCourses: CourseInterface[];
 }

@@ -1,101 +1,91 @@
 {
   "users": [
     {
-      "id": 3,
-      "name": "Candice Casey",
-      "username": "Avis",
-      "password": "123",
-      "picture": "https://picsum.photos/200/300",
-      "isAdmin": true
-    },
-    {
-      "id": 4,
-      "name": "Magdalena Townsend",
-      "username": "Gibson",
-      "password": "123",
-      "picture": "https://picsum.photos/200/300"
-    },
-    {
-      "id": 5,
-      "name": "Martha Moody",
-      "username": "Elizabeth",
-      "password": "123",
-      "picture": "https://picsum.photos/200/300"
-    },
-    {
-      "name": "Spasko 2",
-      "username": "SPas",
-      "password": "az",
-      "picture": "https://picsum.photos/200/300",
-      "id": 6
-    },
-    {
-      "name": "gsdfgdsf",
-      "username": "gfdgsdf",
-      "password": "as",
-      "picture": "https://picsum.photos/200/300",
-      "id": 7
-    },
-    {
-      "name": "Welch Cash",
-      "username": "Green",
-      "password": "123",
-      "picture": "https://picsum.photos/200/300",
-      "id": 8
-    },
-    {
-      "id": 9,
-      "name": "Test Testov",
-      "username": "test",
-      "password": "test1",
-      "picture": "https://picsum.photos/200/300"
-    }
-  ],
-  "tasks": [
-    {
-      "id": "83404ef5-bb8a-432a-9e06-8209c94d34de",
-      "title": "labore",
-      "description": "exercitation tempor aliqua reprehenderit fugiat tempor dolor voluptate nostrud deserunt",
-      "creationDate": "Fri Jun 07 2019 11:30:15 GMT+0300 (Eastern European Summer Time)",
-      "assignees": [
+      "id": 1,
+      "email": "admin-adminov@gmail.com",
+      "username": "Admin",
+      "password": "Admin",
+      "role": "admin",
+      "isBlocked": false,
+      "joinedCourses": [
         {
-          "name": "Candice Casey",
-          "id": 3
+          "id": "wl6Quf1",
+          "title": "Add Course Test Course 2",
+          "description": "Add Course Page Test Course"
+        },
+        {
+          "id": "83404ef5-bb8a-432a-9e06-8209c94d34de",
+          "title": "Course 1 ",
+          "description": "A predefined in the db Course for testing Edited",
+          "rating": 5
+        },
+        {
+          "id": "rz6Mtdj",
+          "title": "Add Course Test Course 2",
+          "description": "Add Course Page Test Course",
+          "rating": 1
+        },
+        {
+          "id": "27f512e3-bbae-4604-ae7b-afb30118f299",
+          "title": "Course 2 Edited",
+          "description": "Also a predefined in the db course",
+          "rating": 4
         }
       ]
+    },
+    {
+      "id": 2,
+      "email": "user-userov@abv.bg",
+      "username": "User",
+      "password": "User",
+      "role": "user",
+      "isBlocked": false,
+      "joinedCourses": [
+        {
+          "id": "2d195d33-13e4-4f9d-a788-95a90757844c",
+          "title": "Course 3",
+          "description": "Third and final predefined in the db couse",
+          "rating": 3
+        },
+        {
+          "id": "27f512e3-bbae-4604-ae7b-afb30118f299",
+          "title": "Course 2",
+          "description": "Also a predefined in the db course",
+          "rating": 4
+        }
+      ]
+    }
+  ],
+  "courses": [
+    {
+      "id": "83404ef5-bb8a-432a-9e06-8209c94d34de",
+      "title": "Course 1 ",
+      "description": "A predefined in the db Course for testing Edited",
+      "rating": 5
     },
     {
       "id": "27f512e3-bbae-4604-ae7b-afb30118f299",
-      "title": "in",
-      "description": "sit consectetur consequat officia ullamco mollit dolore officia ipsum sit",
-      "creationDate": "2017-08-30T06:03:15 -03:00",
-      "assignees": []
+      "title": "Course 2 Edited",
+      "description": "Also a predefined in the db course",
+      "rating": 4
     },
     {
       "id": "2d195d33-13e4-4f9d-a788-95a90757844c",
-      "title": "gfggg",
-      "description": "tempor cupidatat nostrud qui ex amet commodo duis esse enim",
-      "creationDate": "Fri Jun 07 2019 11:27:35 GMT+0300 (Eastern European Summer Time)",
-      "assignees": []
+      "title": "Course 3",
+      "description": "Third and final predefined in the db couse",
+      "rating": 3
     },
     {
-      "id": "060bbd4f-9051-445e-9a99-f82553c48314",
-      "title": "reprehenderit",
-      "description": "occaecat commodo ullamco mollit aliquip laborum cillum nostrud nisi eiusmod",
-      "creationDate": "2018-11-04T02:03:10 -02:00",
-      "assignees": []
+      "id": "ONTWy4N",
+      "title": "Add Course Test Course 3",
+      "description": "Add Course Page Test Course Edited",
+      "rating": 4
     },
     {
-      "id": "67smj-d",
-      "title": "TITLE",
-      "description": "DWESCfgtrs",
-      "creationDate": "Fri Jun 07 2019 11:19:39 GMT+0300 (Eastern European Summer Time)",
-      "assignees": [
-        {
-          "name": "Candice Casey",
-          "id": 3
-        }
-      ]
+      "id": "rz6Mtdj",
+      "title": "Add Course Test Course 2",
+      "description": "Add Course Page Test Course",
+      "rating": 1
     }
   ]
 }
